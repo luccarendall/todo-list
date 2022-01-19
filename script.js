@@ -3,9 +3,16 @@ const createTaskButton = document.getElementById('criar-tarefa');
 /* No momento que houver o clique no 'adicionar', a função será ativada */
 createTaskButton.addEventListener('click', () => {
   const taskName = document.getElementById('texto-tarefa');
-  const lista = document.getElementById('lista-tarefas');
+  const listaOrdenada = document.getElementById('lista-tarefas');
   const task = document.createElement('li');
   task.innerText = taskName.value;
-  lista.appendChild(task);
+  listaOrdenada.appendChild(task);
   taskName.value = '';
 });
+
+// Pq não funciona com arrow function?
+const listaOrdenada = document.getElementById('lista-tarefas');
+function liGrayBackground() {
+  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+listaOrdenada.addEventListener('click', liGrayBackground);

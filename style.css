@@ -1,10 +1,10 @@
 /* Resolução de tela de 1366 x 768 */
-.liOnClick:target {
-  background-color: rgb(128, 128, 128);
-
+.liOnClick::selection {
+    text-decoration-style: line-through;
 }
 
 .input {
   border: 3px solid lightblue;
   border-radius: 5px;
 }
+

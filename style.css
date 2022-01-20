@@ -1,4 +1,21 @@
 /* Resolução de tela de 1366 x 768 */
+header {
+  background-color:rgba(250, 128, 114, 0.849);
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  background-color: rgb(229, 252, 252);
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .liOnClick::selection {
     text-decoration-style: line-through;
 }
@@ -8,3 +25,6 @@
   border-radius: 5px;
 }
 
+.completed {
+  text-decoration: line-through solid rgb(0, 0, 0);
+}

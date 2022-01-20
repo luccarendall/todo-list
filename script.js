@@ -13,6 +13,7 @@ createTaskButton.addEventListener('click', () => {
 // Pq não funciona com arrow function?
 const listaOrdenada = document.getElementById('lista-tarefas');
 function liGrayBackground() {
+  // eslint-disable-next-line no-restricted-globals
   event.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 listaOrdenada.addEventListener('click', liGrayBackground);

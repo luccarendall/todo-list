@@ -1,27 +1,30 @@
-// Função para criar botão de adicionar nova task
-const createTaskButton = document.getElementById('criar-tarefa');
-createTaskButton.addEventListener('click', () => {
-  const taskName = document.getElementById('texto-tarefa');
-  const listaOrdenada = document.getElementById('lista-tarefas');
-  const task = document.createElement('li');
-  task.innerText = taskName.value;
-  listaOrdenada.appendChild(task);
-  taskName.value = '';
-});
-
-// Função para mudar cor do background para cinza (Off: Procurar como usar arrow function aqui)
-const listaOrdenada = document.getElementById('lista-tarefas');
-function liGrayBackground() {
-  // eslint-disable-next-line no-restricted-globals
-  event.target.style.backgroundColor = 'rgb(128, 128, 128)';
+const createTaskButton = document.getElementById('criar-tarefa')
+const listaOrdenada = document.getElementById('lista-tarefas')
+function setTask() {
+    const
+   getInput = document.getElementById('texto-tarefa')
+const newLi = document.createElement('li')
+    listaOrdenada.appendChild(newLi)
+    newLi.innerText = getInput.value
+    getInput.value = ''
 }
-listaOrdenada.addEventListener('click', liGrayBackground);
+createTaskButton.addEventListener('click', setTask) 
+createTaskButton.addEventListener('click', setTask)
 
-// Função para criar botão "Limpar"
-const createClearButton = document.getElementById('apaga-tudo');
-createClearButton.addEventListener('click', () => {
-  listaOrdenada.innerHTML = '';
-});
+const selectInput = document.getElementById('texto-tarefa')
+function submitEnter(event) {
+    if (event.key === 'Enter') {
+        setTask()
+    }
+}
+selectInput.addEventListener('keyup', submitEnter)
 
-// const createCompleteTaskButton = document.getElementById('remover-finalizados');
-// //inserir função de clicar botão remover concluídos.
+const olChild = listaOrdenada.children
+function liGrayBackground(event) {
+    for (let i=0;i<olChild.length;i+=1) {
+        olChild[i].classList.remove('selected')
+    }
+    event.target.classList.add('selected')
+}
+listaOrdenada.addEventListener('click', liGrayBackground)
+

@@ -25,6 +25,10 @@ section {
   border-radius: 5px;
 }
 
+.selected {
+  background-color: gray;
+}
+
 .completed {
-  text-decoration: line-through solid rgb(0, 0, 0);
+  text-decoration: line-through solid black;
 }

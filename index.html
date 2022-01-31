@@ -11,17 +11,26 @@
     <header> <h1>Minha Lista de Tarefas</h1>
     <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
     </header>
-
+    <!-- --------------------------------------------------------------- -->
     <section>
+    <!-- --------------------------------------------------------------- -->    
     <h2>Nome do item que deseja adicionar à lista:</h2>
     <div>
     <input id="texto-tarefa" class="input" type="text" placeholder="Inserir tarefa">
     <button id="criar-tarefa">Adicionar</button>
+    <!-- --------------------------------------------------------------- -->
+    <div>
+         <input type='button' id='salvar' value='Salvar'>      
+        <p id='resultado'></p>
+    </div>
+    <!-- --------------------------------------------------------------- -->
     </div>  
     <ol id="lista-tarefas" class="liOnClick">
     </ol>
+    <!-- --------------------------------------------------------------- -->
     <button id="apaga-tudo">Limpar</button>
     <button id="remover-finalizados">Remover concluídos</button>
+    <!-- --------------------------------------------------------------- -->
     </section>
 
 <script src="script.js"></script>

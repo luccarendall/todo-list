@@ -50,3 +50,45 @@ function clear() {
 clearBtn.addEventListener('click', clear) 
 
 // ----------------------------------------------------------------------
+const removeFinishedBtn = document.getElementById('remover-finalizados')
+function removeFinished() {
+    for (let i=0; i<olChild.length; i+=1) {
+        if (olChild[i].classList.contains('completed')) {
+            olChild[i].remove()
+            i-=1
+        }
+    }
+}
+removeFinishedBtn.addEventListener('click', removeFinished)
+
+// ----------------------------------------------------------------------
+const saveBtn = document.getElementById('salvar-tarefas')
+function saveOnLocalStorage() {
+    const lista = []
+    const classList = []
+    for (let i=0; i<olChild.length; i+=1) {
+        lista.push(olChild[i].innerText)
+        classList.push(olChild[i].className)
+    }
+    localStorage.setItem('getText', JSON.stringify(lista))
+    localStorage.setItem('getClasses', JSON.stringify(classList))
+    console.log('saved!')
+}
+saveBtn.addEventListener('click', saveOnLocalStorage)
+
+// ----------------------------------------------------------------------
+function getTheList() {
+  if (localStorage.getItem('getText') === null) {
+      localStorage.setItem('getText', JSON.stringify([]))
+      localStorage.setItem('getClasses', JSON.stringify([]))
+  } else {
+      const getList = JSON.parse(localStorage.getItem('getText'))
+      const getClasses = JSON.parse(localStorage.getItem('getClasses'))
+      for (let i=0; i<getList.length; i+=1) {
+         const getLi = document.createElement('li')
+          listaOrdenada.appendChild(getLi)
+          getLi.innerHTML = getList[i]
+          getLi.className = getClasses[i]
+      }
+  }
+}

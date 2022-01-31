@@ -71,4 +71,16 @@ function removeSelected() {
     }
 }
 removeSelectedBtn.addEventListener('click', removeSelected)
+
 // ----------------------------------------------------------------------
+const buttonSalvar = document.getElementById('salvar-tarefas');
+const ol = document.getElementById('lista-tarefas');
+function salvarTarefas() {
+  localStorage.setItem('tarefas', ol.innerHTML);
+}
+buttonSalvar.addEventListener('click', salvarTarefas);
+
+function getTarefas() {
+  ol.innerHTML = localStorage.getItem('tarefas');
+}
+getTarefas();
